@@ -1,181 +1,277 @@
 import React from "react";
-const logo = require('../../images/public/logo.png');
-const Navbar: React.FC = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-nav border-bottom m-0">
-            <div className="container-fluid ">
-                <a className="navbar-brand logo" href="#"><img src={logo} alt="Logo"/></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 navigation hide">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Trang chủ</a>
-                        </li>
-                        <li>
-                            <button type="button">
-                                Product
-                                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
-                                    <path
-                                        d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
-                                    </path>
-                                </svg>
-                            </button>
-                            <div className="dropdown__wrapper">
-                                <div className="dropdown">
-                                    <ul className="list-items-with-description">
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M5.18625 8.66531H19.5035V15.331H5.18625V8.66531Z M4 17.0007C4 16.0804 4.7461 15.3343 5.66645 15.3343H18.9984C19.9187 15.3343 20.6648 16.0804 20.6648 17.0007V20.3335C20.6648 21.2539 19.9187 22 18.9984 22H5.66646C4.7461 22 4 21.2539 4 20.3335V17.0007Z M4 3.66646C4 2.7461 4.7461 2 5.66645 2H18.9984C19.9187 2 20.6648 2.7461 20.6648 3.66645V6.99926C20.6648 7.91962 19.9187 8.66572 18.9984 8.66572H5.66646C4.7461 8.66572 4 7.91962 4 6.99926V3.66646Z"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Database</h3>
-                                                <p>Fully portable Postgres database</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M5.03305 15.8071H12.7252M5.03305 15.8071V18.884H12.7252V15.8071M5.03305 15.8071V12.7302H12.7252V15.8071M15.0419 8.15385V5.07692C15.0419 3.37759 13.6643 2 11.965 2C10.2657 2 8.88814 3.37759 8.88814 5.07692V8.15385M5 11.2307L5 18.9231C5 20.6224 6.37757 22 8.07689 22H15.769C17.4683 22 18.8459 20.6224 18.8459 18.9231V11.2307C18.8459 9.53142 17.4683 8.15385 15.769 8.15385L8.07689 8.15385C6.37757 8.15385 5 9.53142 5 11.2307Z"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Authentication</h3>
-                                                <p>User Management out of the box</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M20.4997 12.1386V9.15811L14.8463 3.53163H6.43717C5.57423 3.53163 4.87467 4.23119 4.87467 5.09413V9.78087M20.4447 9.13199L14.844 3.53125L14.844 7.56949C14.844 8.43243 15.5436 9.13199 16.4065 9.13199L20.4447 9.13199ZM7.12729 9.78087H4.83398C3.97104 9.78087 3.27148 10.4804 3.27148 11.3434V19.1559C3.27148 20.8818 4.67059 22.2809 6.39648 22.2809H18.8965C20.6224 22.2809 22.0215 20.8818 22.0215 19.1559V13.7011C22.0215 12.8381 21.3219 12.1386 20.459 12.1386H10.8032C10.3933 12.1386 9.99969 11.9774 9.70743 11.6899L8.22312 10.2296C7.93086 9.94202 7.53729 9.78087 7.12729 9.78087Z"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Storage</h3>
-                                                <p>Serverless storage for any media</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M6.6594 21.8201C8.10788 22.5739 9.75418 23 11.5 23C17.299 23 22 18.299 22 12.5C22 10.7494 21.5716 9.09889 20.8139 7.64754M16.4016 3.21191C14.9384 2.43814 13.2704 2 11.5 2C5.70101 2 1 6.70101 1 12.5C1 14.287 1.44643 15.9698 2.23384 17.4428M2.23384 17.4428C1.81058 17.96 1.55664 18.6211 1.55664 19.3416C1.55664 20.9984 2.89979 22.3416 4.55664 22.3416C6.21349 22.3416 7.55664 20.9984 7.55664 19.3416C7.55664 17.6847 6.21349 16.3416 4.55664 16.3416C3.62021 16.3416 2.78399 16.7706 2.23384 17.4428ZM21.5 5.64783C21.5 7.30468 20.1569 8.64783 18.5 8.64783C16.8432 8.64783 15.5 7.30468 15.5 5.64783C15.5 3.99097 16.8432 2.64783 18.5 2.64783C20.1569 2.64783 21.5 3.99097 21.5 5.64783ZM18.25 12.5C18.25 16.2279 15.2279 19.25 11.5 19.25C7.77208 19.25 4.75 16.2279 4.75 12.5C4.75 8.77208 7.77208 5.75 11.5 5.75C15.2279 5.75 18.25 8.77208 18.25 12.5Z"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Edge Functions</h3>
-                                                <p>Deploy code globally on the edge</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M9.15928 1.94531V5.84117M6.24345 5.84117L2.91385 2.40977M6.24345 8.53673H2.4248M16.7998 16.496L21.9988 15.2019C22.7217 15.022 22.8065 14.0285 22.1246 13.7286L9.73411 8.28034C9.08269 7.99391 8.41873 8.65652 8.70383 9.30851L14.0544 21.5445C14.3518 22.2247 15.341 22.1456 15.5266 21.4269L16.7998 16.496Z"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Realtime</h3>
-                                                <p>Synchronize and broadcast events</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon-wrapper">
-                                                <svg
-                                                    className="h-5 w-5 group-hover/menu-item:text-foreground group-focus-visible/menu-item:text-foreground"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="1.5"
-                                                          d="M11.9983 11.4482V21.7337M11.9983 11.4482L21.0732 6.17699M11.9983 11.4482L2.92383 6.17723M2.92383 6.17723V12.4849M2.92383 6.17723V6.1232L8.35978 2.9657M21.0736 12.54V6.1232L15.6376 2.9657M17.7247 18.6107L11.9987 21.9367L6.27265 18.6107"
-                                                          stroke="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div className="item-title">
-                                                <h3>Vector</h3>
-                                                <p>AI toolkit to manage embeddings
-                                                </p><p>
-                                            </p></div>
-                                        </li>
-                                    </ul>
+const tophead = require('../../images/public/tophead.jpg');
+const search1 = require('../../images/books/search1.jpg');
+const search2 = require('../../images/books/search2.jpg');
+const search3 = require('../../images/books/search3.jpg');
+const search4 = require('../../images/books/search4.jpg');
+const search5 = require('../../images/books/search5.jpg');
+const search6 = require('../../images/books/search6.jpg');
+
+const Navbar: React.FC = () => {
+    function toggleLanguage(): void {
+        let language = document.getElementById("top-language-dropdown") as HTMLElement;
+        if (language.style.display === "block") {
+            language.setAttribute("style", "display: none;");
+        } else {
+            language.setAttribute("style", "display: block;");
+        }
+    }
+
+    return (
+        <nav>
+            <div className="top-bar-desktop">
+                <div className="top-banner center_center">
+                    <a>
+                        <img src={tophead} alt="tophead"/>
+                    </a>
+                </div>
+                <div className="top-bar mouse-hover">
+                    <div className="top-bar-left">
+                        <a href="/">
+                            <div className="top-bar-logo"></div>
+                        </a>
+                    </div>
+
+                    <div className="top-bar-category mouse-hover">
+                        <span className="top-bar-category-menu"></span>
+                        <span className="top-bar-category-seemore"></span>
+                        <div className="top-bar-category-container">
+                            <div className="top-bar-category-container-left">
+                                <h1>Danh mục sản phẩm</h1>
+                                <h2>Sách trong nước</h2>
+                                <h2>Sách nước ngoài</h2>
+                                <h2>Văn phòng phẩm</h2>
+                                <h2>Đồ chơi</h2>
+                                <a href="#" id="lamdepsuckhoe">Làm đẹp - sức khoẻ</a>
+                                <h2>Hành trang đến trường</h2>
+                                <h2>Văn phòng phẩm theo thương hiệu</h2>
+                                <h2>Đồ chơi theo thương hiệu</h2>
+                                <h2>Bách hoá phụ kiện</h2>
+                            </div>
+
+                            <div className="top-bar-category-container-right" id="top-bar-category-container-right">
+                                <div className="top-bar-category-container-right-title">
+                                    <i className="ico_lamdepsuckhoe"></i>
+                                    <span>Làm đẹp sức khoẻ</span>
+                                </div>
+                                `
+                                <div className="top-bar-category-container-right-menu">
+                                    <h3>LÀM ĐẸP - SỨC KHOẺ</h3>
+                                    <a href="#">Khẩu trang các loại</a>
+                                    <a href="#">Nước rửa tay - xà phòng</a>
+                                    <a href="#">Băng keo cá nhân</a>
+                                    <a href="#">Khăn giấy - giấy ướt</a>
+                                    <a href="#">Chăm sóc cá nhân khác</a>
+                                    <a href="#">Chăm sóc làm đẹp</a>
+                                    <a href="#" style={{color: 'blue'}}>Xem tất cả</a>
                                 </div>
                             </div>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Quy định bán hàng
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a className="dropdown-item" href="#">Quy định 1</a></li>
-                                <li><a className="dropdown-item" href="#">Quy định 2</a></li>
-                                <li><a className="dropdown-item" href="#">Quy định 3</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Liên hệ</a>
-                        </li>
-                    </ul>
+
+
+                        </div>
+                    </div>
+                    <div className="top-bar-search-container">
+                        <div className="top-bar-search">
+                            <input type="text" placeholder="Tìm kiếm sản phẩm mong muốn..."/>
+                            <span className="button"><span className="top-bar-search-icon"></span></span>
+
+                        </div>
+                        <div className="top-bar-search-info">
+                            <div className="top-bar-search-info-headline">
+                                <span className="top-bar-search-info-headline-label">Cặp sách mới - kiến thức mới</span>
+                                <img className=" lazyloaded"
+                                     src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Artboard_11.3.jpg"
+                                     data-src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Artboard_11.3.jpg"/>
+                            </div>
+
+                            <div className="tu-khoa-hot">
+              <span><img
+                  src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_searchtrending_black.svg"/></span>
+                                <span>Từ khoá Hot</span>
+                            </div>
+
+                            <div className="tu-khoa-hot-container">
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search1} alt="search1"/>
+                                    <span>Muôn kiếp nhân sinh</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search2} alt="search2"/>
+                                    <span>Giải tích cực chill</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search3} alt="search3"/>
+                                    <span>Cây cam chanh của tôi</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search4} alt="search4"/>
+                                    <span>Thỏ tám màu</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search5} alt="search5"/>
+                                    <span>Bói tarot cực chuẩn</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-4">
+                                    <img src={search6} alt="search6"/>
+                                    <span>Sách tâm lý cực cuốn</span>
+                                </div>
+                            </div>
+                            <div className="block_line" style={{marginTop: '10px'}}>
+                                <div></div>
+                            </div>
+
+                            <div className="tu-khoa-hot" style={{marginTop: '10px'}}>
+              <span><img width="20px" height="20px"
+                         src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_menu.svg"/></span>
+                                <span>Chuyên mục nổi bật</span>
+                            </div>
+
+                            <div className="tu-khoa-hot-container" style={{marginTop: '20px', marginBottom: '20px'}}>
+                                <div className="tu-khoa-hot-item col-md-3">
+                                    <img src={search3} alt="search3"/>
+                                    <span>Cây cam chanh của tôi</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-3">
+                                    <img src={search4} alt="search4"/>
+                                    <span>Thỏ tám màu</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-3">
+                                    <img src={search5} alt="search5"/>
+                                    <span>Bói tarot cực chuẩn</span>
+                                </div>
+                                <div className="tu-khoa-hot-item col-md-3">
+                                    <img src={search6} alt="search6"/>
+                                    <span>Sách tâm lý cực cuốn</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div className="center_center mouse-hover top-notif ">
+                        <a className="top-button-icon">
+                            <div className="center_center" style={{marginBottom: '3px'}}>
+                                <div className="icon_nofi_gray"></div>
+                            </div>
+                            <div className="center_center">
+                                <div className="top_menu_label">Thông Báo</div>
+                            </div>
+                        </a>
+                        <div className="top-dropdown">
+                            <div className="dropdown-pad">
+                                <div className="center_center" style={{fontSize: '1.23em', color: '#0D0E0F'}}>
+                                    <span className="icon_nofi_black" style={{marginRight: '5px'}}></span>
+                                    <span>Thông báo</span>
+                                </div>
+                            </div>
+                            <div className="center_center">
+                                <span className="ico_notlogin"></span>
+                            </div>
+                            <div className="center_center"
+                                 style={{color: '#0D0E0F', fontSize: '1.23em', marginTop: '10px'}}>Vui
+                                lòng
+                                đăng nhập để
+                            </div>
+                            <div className="center_center"
+                                 style={{color: '#0D0E0F', fontSize: '1.23em', paddingBottom: '24px'}}>xem
+                                thông báo
+                            </div>
+                            <button style={{marginTop: '5px'}} type="button" className="button-default active">
+                                <span>Đăng nhập</span>
+                            </button>
+                            <button style={{marginTop: '10px'}} type="button" className="button-default">
+                                <span>Đăng ký</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="center_center mouse-hover">
+                        <a className="top-button-icon">
+                            <div className="center_center" style={{marginBottom: '3px'}}>
+                                <div className="icon_cart_gray"></div>
+                            </div>
+                            <div className="center_center">
+                                <div className="top_menu_label">Giỏ hàng</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="center_center mouse-hover top-account">
+                        <a className="top-button-icon">
+                            <div className="center_center" style={{marginBottom: '3px'}}>
+                                <div className="icon_account_gray"></div>
+                            </div>
+                            <div className="center_center">
+                                <div className="top_menu_label">Tài khoản</div>
+                            </div>
+                        </a>
+                        <div className="top-dropdown"
+                             style={{padding: '5px 10px 15px 10px', marginTop: '60px', width: '16%'}}>
+                            <button style={{marginTop: '5px'}} type="button" className="button-default active">
+                                <span>Đăng nhập</span>
+                            </button>
+                            <button style={{marginTop: '5px'}} type="button" className="button-default">
+                                <span>Đăng ký</span>
+                            </button>
+                            <button style={{marginTop: '5px'}} type="button" className="button-facebook center_center">
+                                <span className="icon_facebook"></span>
+                                <span>Đăng nhập bằng Facebook</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div className="center_center top-language mouse-hover" onClick={toggleLanguage}>
+                        <div className="top-language-flag center_center">
+                            <span className="top-language-flag-icon"></span>
+                            <span className="top-language-flag-seemore"></span>
+                        </div>
+                        <div className="top-language-dropdown" style={{display: 'none'}} id="top-language-dropdown">
+                            <div className="top-language-dropdown-item center_center">
+                                <span className="top-language-flag-icon"></span>
+                                <span className="top-language-dropdown-item-label">VN</span>
+                            </div>
+                            <div className="top-language-dropdown-item center_center">
+                                <span className="top-language-flag-icon-eng"></span>
+                                <span className="top-language-dropdown-item-label">EN</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="top-bar-mobile">
+                <div className="top-banner-mobile">
+                    <a>
+                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fahasa-logo.png"
+                             alt="FAHASA.COM"/>
+                    </a>
                 </div>
 
-                {/* Tìm kiếm */}
-                <form className="d-flex">
-                    <input className="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div className="top-bar-child-mobile">
+                    <div className="top-bar-category-mobile mouse-hover">
+                        <span className="ico_menu_white"></span>
+                    </div>
 
-                {/* Biểu tượng giỏ hàng */}
-                <ul className="navbar-nav me-1">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">
-                            <i className="fas fa-shopping-cart"></i>
-                        </a>
-                    </li>
-                </ul>
+                    <div className="top-bar-search-mobile">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm mong muốn..."/>
+                    </div>
 
-                {/* Biểu tượng đăng nhập */}
-                <ul className="navbar-nav me-1">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">
-                            <i className="fas fa-user"></i>
-                        </a>
-                    </li>
-                </ul>
+                    <div className="top-bar-mobile-icon center_center">
+                        <span className="icon_cart_white"></span>
+                    </div>
+
+                    <div className="top-bar-mobile-icon center_center">
+                        <span className="login-cutomer-icon"></span>
+                    </div>
+
+                </div>
+
+
             </div>
+
         </nav>
     );
 }

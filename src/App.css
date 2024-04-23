@@ -1,322 +1,1928 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-:root {
-    --primary: #3ECF8E;
-    --primary-dark: #37996B;
-    --primary-darker: #317F5A;
-    --text: #F9F9F9;
-    --background: #1C1C1C;
-    --secondary: #2E2E2E;
-    --gray-border: #3E3E3E;
-    --gray-border-hover: #505050;
-    --gray-menu-button: #7E7E7E;
-    --gray-menu-button-hover: #232323;
-    --navbar-height: 4rem;
-    --gray-text-hover: #8F8F8F;
-    --gray-icon: #A0A0A0;
-
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    background-color: var(--background);
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.header {
-    width: 100vw;
-    border-bottom: 1px solid var(--gray-border);
-    height: var(--navbar-height);
+*:focus {
+    outline: none;
+}
+
+
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #EFEFEF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.center_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.center_center_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 9%;
+    margin-right: 9%;
+}
+
+
+
+.top-banner {
+    text-align: center;
+    background-color: #0F60A1;
+}
+
+.mouse-hover {
+    cursor: pointer;
+}
+
+
+.top-bar {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    padding-top: 10px;
+    background-color: #fff;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.top-bar-logo {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo/fahasa_logo.png") no-repeat center center;
+    background-size: contain;
+    width: 220px;
+    height: 36px;
+}
+
+.top-bar-category {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 10px;
+    position: relative;
+    height: 100%;
+    background-color: white;
     align-items: center;
     justify-content: center;
 }
 
-.menu__wrapper {
-    display: flex;
-    position: fixed;
-    justify-content: space-between;
-    z-index: 2;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 60rem;
-    padding: 0px 1rem;
-    align-items: center;
+.top-bar-category-menu {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_menu.svg") no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
 }
 
-.menu__bar {
-    display: flex;
-    align-items: center;
+.top-bar-category-seemore {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/icon_seemore_gray.svg") no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
 }
 
-.logo {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.top-bar-category-container {
+    position: absolute;
+    top: 10%;
+    left: -100px;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 900px;
+    border: 1px solid #ccc;
+    opacity: 0;
+    display: none;
+    transition: all 0.6s ease-in-out;
 }
 
-.logo img {
-    height: 1.5rem;
+.top-bar-category-container:hover {
+    transform: translateY(6%);
+    opacity: 1;
+    display: flex;
 }
-.bg-nav{
-    background-color: var(--background);
+
+.ico_lamdepsuckhoe {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/category/ico_lamdepsuckhoe.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
 }
-.navigation {
-    margin-left: 2rem;
+
+.top-bar-category:hover .top-bar-category-container {
+    display: flex;
+}
+
+.top-bar-category-container-right-title {
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
-    list-style-type: none;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--background);
+    margin-left: 20px;
 }
 
-.navigation>li {
-    /*display: flex;*/
-    position: relative;
-    cursor: pointer;
-    align-items: center;
-    min-height: 2.25rem;
-}
-
-.navigation>li>a {
-    color: var(--text);
-    font-size: 14px;
+.top-bar-category-container-right-title span {
+    font-size: 1.4em;
     font-weight: 600;
-    text-decoration: none;
+    color: #333333;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
-.navigation>li>a:hover {
-    color: var(--primary);
-}
-
-.navigation>li>button {
-    color: var(--text);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    margin-right: -0.25rem;
-    align-items: center;
-    min-height: 2.25rem;
-    font-size: 14px;
-    gap: 0.25rem;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
-    flex-wrap: nowrap;
-    padding: 0.25rem 0.7rem;
-    white-space: nowrap;
-    background: none;
+.top-bar-category-container-right-menu {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+.top-bar-category-container-right-menu h3 {
+    font-size: 1em;
+    font-weight: 600;
+    color: gray;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.top-bar-category-container-right-menu a {
+    font-size: 0.9em;
+    color: #333333;
+    margin-top: 5px;
+    border-radius: 10px;
+    color: gray;
+    width: 100%;
+    text-decoration: none;
+}
+
+.top-bar-category-container-right-menu a:hover {
+    color: #0F60A1;
+    cursor: pointer;
+
+}
+
+.top-bar-category-container-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 1px solid #ccc;
+}
+
+.top-bar-category-container-left * {
+    padding: 15px;
+}
+
+.top-bar-category-container-left h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: gray;
+    margin-top: 15px;
+}
+
+.top-bar-category-container-left h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333333;
+    margin-top: 8px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.top-bar-category-container-left h2:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.top-bar-category-container-left a {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333333;
+    margin-top: 8px;
+    border-radius: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.top-bar-category-container-left a:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.top-bar-category-container-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+
+}
+
+
+.top-bar-search {
     position: relative;
-    transition: all 0.2s ease-in-out;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 8px 40px 12px 0px;
 }
 
-.navigation>li>button>svg {
-    margin-top: 2px;
-    fill: var(--text);
-    transition: all 0.2s ease-in-out;
+.top-bar-search input {
+    width: 100%;
+    display: inline-block;
+    height: 40px;
+    padding: 0 80px 0 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #545759;
+    background-color: white;
+}
+
+.button {
+    display: flex;
+    background-color: #C92127;
+    border-radius: 10px;
+    width: 72px;
+    height: 30px;
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    right: 4px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.top-bar-search-icon {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_search_white.svg") no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+
+.top-bar-search-container {
+    width: calc(85% - 619px);
+    position: relative;
+}
+
+.top-bar-search-container:hover .top-bar-search-info {
+    display: flex;
+
 }
 
 
-.navigation>li:hover>button svg {
-    fill: var(--primary);
-    transform: rotate(0.5turn);
+
+
+.top-bar-search-info {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.6s ease-in-out;
+    display: none;
+
+
 }
 
-.navigation>li:hover>button {
-    color: var(--primary);
+.tu-khoa-hot {
+    margin-left: 15px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.navigation>li:hover .dropdown {
+.tu-khoa-hot span {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333333;
+    margin-right: 10px;
+}
+
+.tu-khoa-hot-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 15px;
+    flex-wrap: wrap;
+    margin-right: 15px;
+}
+
+.tu-khoa-hot-item {
+    padding: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+}
+
+.col-md-3 {
+    width: calc(25%);
+
+}
+
+.tu-khoa-hot-item span {
+    font-size: 0.9em;
+    color: #333333;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.tu-khoa-hot-item img {
+    height: 50%;
+    width: 50%;
+}
+
+.tu-khoa-hot-item:hover {
+    box-shadow: 0 0 5px #ccc;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.top-bar-search-info-headline {
+    border-radius: 10px;
+    background-color: rgb(255, 242, 204);
+    color: rgb(240, 45, 27);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.top-bar-search-info-headline span {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.top-bar-search-info-headline img {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+
+
+.top-button-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.icon_nofi_black {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_noti_black.svg") no-repeat center center;
+    background-size: contain;
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.dropdown-pad {
+    padding: 5px;
+    border-bottom: 1px solid #F2F4F5;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.icon_nofi_gray {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_noti_gray.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+.button-default {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #C92127;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-clip: border-box;
+    border: 1px solid #C92127;
+    width: 100%;
+}
+
+.button-facebook {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #3B5998;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-clip: border-box;
+    border: 1px solid #3B5998;
+    width: 100%;
+}
+
+.icon_facebook {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo/facebook_logo.svg") no-repeat center center;
+    background-size: contain;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+}
+
+.a {
+    background-color: #8e1111;
+    color: white;
+    border: 1px solid #fff;
+}
+
+.active {
+    color: white;
+    border: 1px solid #fff;
+}
+
+.ico_notlogin {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/customer/ico_login.svg") no-repeat center center;
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+    padding: 24px;
+}
+
+.top_menu_label {
+    line-height: 18px;
+    color: #7A7E7F;
+    font-size: 12px;
+}
+
+.icon_cart_gray {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_cart_gray.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+.icon_account_gray {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_account_gray.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+.top-language {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.top-language-flag {
+    padding: 7px;
+}
+
+.top-language-flag-icon {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/default.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 37px;
+    display: inline-block;
+}
+
+.top-language-flag-seemore {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/icon_seemore_gray.svg") no-repeat center center;
+
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+}
+
+.top-language-dropdown-item {
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-clip: border-box;
+}
+
+.top-language-dropdown-item:hover {
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    background-clip: border-box;
+}
+
+.top-language-flag-icon-eng {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/store/english.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 37px;
+    display: inline-block;
+}
+
+.top-notif>.top-dropdown {
+    display: none;
+}
+
+.top-notif:hover>.top-dropdown {
+    display: block;
+    z-index: 100;
+}
+
+.top-account>.top-dropdown {
+    display: none;
+}
+
+.top-account:hover>.top-dropdown {
     display: block;
 }
 
+.top-dropdown {
+    display: none;
+    position: absolute;
+    transform: translateY(65%) translateX(-38%);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px 45px 25px 45px;
+    z-index: 10;
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.99) translateY(-0.7em);
-        transform-origin: top;
-    }
+}
 
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
+.top-language-dropdown {
+    position: absolute;
+    transform: translateY(90%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.top-language-dropdown-item-label {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: gray;
+    font-size: 12px;
+
+}
+
+.top-slider {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+}
+
+.top-slider-left {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 9;
+}
+
+.top-slider-child {
+    width: 840px;
+    height: 320px;
+}
+
+.top-slider-right {
+    margin-left: 10px;
+}
+
+.top-slider-child-static img {
+    border-radius: 15px;
+}
+
+.slider img {
+    border-radius: 15px;
+}
+
+.ico_arrow_gray {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_arrow_gray.svg") no-repeat center center;
+    background-size: contain;
+    height: 14.4px;
+    width: 14.4px;
+}
+
+.right {
+    transform: rotate(-180deg) !important;
+}
+
+.top-slider-left>.swipe-button-left:hover {
+    width: 40px;
+    height: 40px;
+    left: -6px;
+}
+
+.top-slider-left>.swipe-button-right:hover {
+    width: 40px;
+    height: 40px;
+    right: -6px;
+}
+
+
+.top-slider-left>.swipe-button-left {
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    /* Safari and Chrome */
+    -o-transition: all 0.3s ease-in-out 0s;
+    /* Opera */
+    -ms-transition: all 0.3s ease-in-out 0s;
+    /* Explorer 10 */
+    z-index: 10;
+
+}
+
+.top-slider-left>.swipe-button-right {
+    z-index: 10;
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    right: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    /* Safari and Chrome */
+    -o-transition: all 0.3s ease-in-out 0s;
+    /* Opera */
+    -ms-transition: all 0.3s ease-in-out 0s;
+    /* Explorer 10 */
+}
+
+.header-coupon {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.header-coupon-child {
+    margin: 2px;
+}
+
+
+.container-category {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+}
+
+.container-category-child {
+    width: 10%;
+}
+
+@media screen and (max-width: 992px) {
+    .container-category-child {
+        width: 20%;
     }
 }
 
-/* dropdown menu */
-.dropdown__wrapper {
+
+.container-category-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-category-child img {
+    width: 48px;
+    height: 48px;
+}
+
+.container-category-child>a {
+    text-decoration: none;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.flashsale-header {
+    background-color: #FCDAB0;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+.flashsale-header-title {
+    font-weight: 550;
+    margin-left: 10px;
+    font-size: 1.31em;
+    color: #1F1D1D;
+}
+
+.flashsale-page-countdown-label {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #000;
+    margin-right: 10px;
+}
+
+.flashsale-header-countdown-item {
+
+    padding: 4px 8px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+
+}
+
+.flashsale-section {
+    background-color: white;
+
+}
+
+.flashsale-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.flashsale-container-item {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 19%;
+    margin-top: 10px;
+}
+
+.flashsale-container-item:hover {
+    box-shadow: 0 0 5px #ccc;
+}
+
+.flashsale-container-item:hover .flashsale-container-item-image {
+    box-shadow: 0 -5px 5px -5px #ccc, -5px 0 5px -5px #ccc, 5px 0 5px -5px #ccc;
+}
+
+
+.flashsale-container-item-image {
+    height: 40%;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashsale-container-item-image img {
+    width: 90%;
+    height: 90%;
+}
+
+.new-label-pro-sale {
+    background-color: #F7941E;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 0px !important;
+    z-index: 3;
+}
+
+.new-label-pro-sale span {
+    color: #ffffff;
+    font-size: 1.2em !important;
+    font-weight: 600;
+}
+
+.product-name {
+    padding-top: 0px !important;
+    line-height: 1.4em;
+    word-break: break-word;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.8em;
+    max-height: 2.8em;
+    font-size: 1.1em;
+    color: #333333;
+
+    margin-top: 10px;
+}
+
+.product-info {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.flashsale-price-special {
+    font-size: 1.35em;
+    color: #F7941E;
+    font-weight: 600;
+}
+
+.flashsale-price-old {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 1.1em;
+}
+
+.progress {
+    position: relative;
+    height: 18px;
+    border-radius: 15px;
+    background-color: rgba(210, 33, 33, 0.4);
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.progress-bar {
+    position: absolute;
+    background-color: #D22121;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.progress span {
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 5rem;
-}
-
-.dropdown {
-    border-radius: 0.5rem;
-    display: none;
-    padding: 0.5rem;
     width: 100%;
-    max-width: 600px;
-    border: 1px solid var(--gray-border);
-    z-index: 2;
-    animation: fadeIn 0.2s ease-in-out;
+    line-height: 20px;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
 }
 
-.list-items-with-description {
-    list-style-type: none;
-    display: grid;
+
+.flashsale-xemthem {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 3px 5px #ccc;
+    font-size: 14px;
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 220px;
+    display: inline-block;
+    background-image: linear-gradient(to right, #ff9800, #F7695D);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.flashsale-xemthem:hover {
+    transform: scale(1.1);
+}
+
+
+.danhmucsanpham {
+    margin-top: 35px;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 0.75rem;
 }
 
-.list-items-with-description li {
+.danhmucsanpham-header {
     display: flex;
-    gap: 1rem;
+    background-color: #fff;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+.ico_menu_red {
+    display: inline-block;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_menu_red.svg") no-repeat center center;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    margin-right: 8px;
+}
+
+.danhmucsanpham-header-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #212121;
+    letter-spacing: 0px;
+
+}
+
+.danhmucsanpham-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.danhmucsanpham-section-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+}
+
+.danhmucsanpham-section-item img {
+    height: 50% !important;
+    margin-bottom: 20px;
+}
+
+.block_line {
+    padding: 0 32px;
+    background-color: white;
+}
+
+.block_line div {
+    width: 100%;
+    height: 1px;
+    background-color: #F2F4F5;
+
+}
+
+.xuhuongmuasam {
+    margin-top: 35px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.xuhuongmuasam-header {
+    background-color: #FCDDEF;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.xuhuongmuasam-header-title {
+    margin-left: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #212121;
+    letter-spacing: 0px;
+}
+
+.xuhuongmuasam-cate {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+
+}
+
+.xuhuongmuasam-cate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    font-size: 1em;
+
+    color: #212121;
+    letter-spacing: 0px;
+    border-radius: 10px;
+    margin-left: 15px;
+
+}
+
+.xuhuongmuasam-cate-item-active {
+    border: 1px solid #F7931E !important;
+    color: #F7931E !important;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.xuhuongmuasam-cate-item:hover {
+    border: 1px solid #F7931E;
+    color: #F7931E;
+    font-weight: bold;
+}
+
+.xuhuongmuasam-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.xuhuongmuasam-container-item {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 19%;
+    margin-top: 10px;
+}
+
+.xuhuongmuasam-container-item:hover {
+    box-shadow: 0 0 5px #ccc;
+}
+
+.xuhuongmuasam-container-item:hover .flashsale-container-item-image {
+    box-shadow: 0 -5px 5px -5px #ccc, -5px 0 5px -5px #ccc, 5px 0 5px -5px #ccc;
+}
+
+
+.xuhuongmuasam-container-item-image {
+    height: 40%;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.xuhuongmuasam-container-item-image img {
+    width: 90%;
+    height: 90%;
+}
+
+.xuhuongmuasam-price-special {
+    font-size: 1.15em;
+    color: #C92127;
+    font-weight: 600;
+}
+
+.xuhuongmuasam-price-old {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+.rating {
+    width: calc(16px * 5);
+    height: 16px;
+    position: relative;
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_gray.svg) repeat-x;
+    background-size: 16px 16px;
+    margin: 0px 0px 0px 10px;
+    position: relative;
+    float: left;
+    padding: 15px;
+
+
+}
+
+.rating-item {
+    display: inline-block;
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_yellow.svg) repeat-x;
+    background-size: 16px 16px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.ratingbox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.xuhuongmuasam-xemthem {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 3px 5px #ccc;
+    background-color: white;
+    font-size: 14px;
+    border: #C92127 solid 1px;
+    color: #C92127;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 220px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.xuhuongmuasam-xemthem:hover {
+    transform: scale(1.1);
+}
+
+.donvilienket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.donvilienket-item {
+    margin-left: 5px;
+    width: calc(100% / 9);
+}
+
+.donvilienket-item img {
+    width: 90%;
+    height: 90%;
+}
+
+.donvilienket-swiper {
+    position: relative;
+}
+
+.donvilienket-swiper-left {
+    position: absolute;
+    top: calc(50%);
+    left: 0px;
+}
+
+.donvilienket-swiper-left span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+}
+
+.donvilienket-swiper-right {
+    position: absolute;
+    top: calc(50%);
+    right: 0px;
+}
+
+.donvilienket-swiper-right span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+}
+
+.footer {
     width: 100%;
 }
 
-.list-items-with-description li:hover {
-    background-color: var(--secondary );
-    border-radius: 0.3rem;
+.dangkynhanbantin {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #9FA7AB;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.icon-wrapper svg {
-    color: var(--gray-text-hover);
+.dangkynhanbantin-title {
+    font-size: 1.6em;
+;
+    color: #fff;
+    letter-spacing: 0px;
+    margin-left: 30px;
+}
+
+.nhapemail {
+    margin-left: 20px;
+    position: relative;
+    width: 70%;
+    height: 50px;
+}
+
+.nhapemail-input {
+
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    padding: 0 80px 0 20px;
+    border: 0px solid #fff;
+    border-radius: 10px;
+    color: #545759;
+    background-color: white;
+}
+
+.nhapemail-button {
+    cursor: pointer;
+    display: flex;
+    background-color: #F7941E;
+    border: 0px solid #fff;
+    color: white;
+    border-radius: 6px;
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    right: 4px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nhapemail-button:hover {
+    background-color: #F7695D;
+    width: 140px;
+}
+
+.footer-container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.footer-container-left {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 15px;
+    border-right: 1px solid #cecece;
+
 }
 
 
-.list-items-with-description li:hover svg {
-    color: var(--text);
+
+.address-footer {
+    font-size: 13px;
+    color: #333333;
+    letter-spacing: 0px;
+    margin-top: 5px;
+    margin-bottom: 2px;
 }
 
-.list-items-with-description li .icon-wrapper {
+.social-fahasa {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.social-fahasa a {
+    color: white;
+}
+
+.download-fahasa {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.download-fahasa a {
+    color: white;
+    margin-right: 10px;
+}
+
+.footer-container-right {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 15px;
+    margin-left: 10px;
+}
+
+.footer-menu-1 {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    width: calc(100% / 3);
+}
+
+.footer-menu-1-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    font-size: 12px;
+    line-height: 35px;
+    color: black;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.footer-link::before {
+    content: "";
+}
+
+.footer-link:hover::before {
+    content: "❗";
+    color: #ea7696;
+    margin-right: 2px;
+}
+
+.footer-link:hover {
+    padding-left: 5px;
+    color: #ea7696;
+
+}
+
+.col-md-5 {
+    width: 20%!important;
+    height: 50%!important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+
+.col-md-5 img {
+    width: 60%!important;
+    height: auto!important;
+}
+
+.sidebar {
+    padding-left: 0;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: gray;
+}
+
+.tooltip_asidebar {
+    display: none;
+    position: absolute;
+    top: calc(50%);
+    right: 100%;
+    transform: translateY(-50%);
+    padding: 5px;
+    width: 200px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.fhs_tooltip_asidebar_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 100%;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.sidebar-item-suggestion {
+    position: relative;
+    padding: 10px;
+    background-color: gray;
+    width: 48px;
+    height: 48px;
+    border-top-left-radius: 10px;
+}
+
+.sidebar-item-suggestion:hover .tooltip_asidebar {
+    display: block !important;
+}
+
+.sidebar-item-suggestion:hover {
+    background-color: #C92127;
+}
+
+.sidebar-item-follow {
+    position: relative;
+    padding: 10px;
+    background-color: gray;
+    width: 48px;
+    height: 48px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar-item-follow:hover .tooltip_asidebar {
+    display: block !important;
+}
+
+.sidebar-item-follow:hover {
+    background-color: #C92127;
+}
+
+.carousel-inner{
+    border-radius: 15px !important;
+    z-index: 5;
+}
+.lamdep-firsttitle {
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     padding: 10px 0px;
+     width: 100%;
+ }
+
+.lamdep-firsttitle span {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.lamdep-firsttitle span:nth-child(3) {
+    color: #C92127;
+}
+
+.lamdep-container {
+    display: flex;
+
+    width: 100%;
+}
+
+.lamdep-container-left {
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+}
+
+.lamdep-container-right {
+    width: 70%;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+}
+
+.nhomsanpham {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.nhomsanpham span {
+    font-size: 14px;
+    padding: 6px;
+}
+
+.nhomsanpham span:nth-child(1) {
+    font-weight: bold;
+}
+
+.nhomsanpham span:nth-child(2) {
+    color: gray;
+    margin-left: 10px;
+}
+
+.nhomsanpham span:nth-child(3) {
+    color: #C92127;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nhomsanpham span:nth-child(4) {
+    color: gray;
+    margin-left: 15px;
+}
+
+.filter-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.filter-box h2 {
+    font-size: 14px;
+    padding: 6px;
+}
+
+.option-checkbox {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+
+}
+
+.option-checkbox input::before {
+    background: transparent url(https://cdn0.fahasa.com/skin/frontend/base/default/images/manapro_filtercheckboxes/ico_uncheck.png) 0 50% no-repeat;
+    content: "";
+    visibility: visible;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.option-checkbox input {
+    margin-right: 10px;
+    margin-left: 20px;
+    visibility: hidden;
+
+}
+
+.option-checkbox input:checked {
+    visibility: hidden;
+}
+.option-checkbox input:checked::before {
+    display: inline-block;
+    background: transparent url(https://cdn0.fahasa.com/skin/frontend/base/default/images/manapro_filtercheckboxes/ico_checked.png) 0 50% no-repeat;
+    content: "";
+    visibility: visible;
+    width: 16px;
+    height: 16px;
+}
+
+.option-checkbox label {
+    font-size: 14px;
+    color: gray;
+
+}
+
+.option-checkbox label:hover {
+    color: #C92127;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: translate(5px, 0px);
+}
+
+.m-xemthem {
+    margin-top: 10px;
+    color: #F7941E;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: fit-content;
+    padding-right: 20px;
+    background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_morong.png') no-repeat right;
+}
+
+.sapxeptheo {
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    border-bottom: 1px solid #E5E5E5;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sapxeptheo .selectbox-dropdown-macdinh {
+    font-size: 14px;
+    padding: 10px;
+    color: black;
+    margin-left: 30px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-left: 20px;
+}
+
+.sapxeptheo .selectbox-dropdown-macdinh::after {
+    content: "";
+    display: inline-block;
+    margin-left: 10px;
+    width: 15px;
+    height: 9px;
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_dropdown.png) no-repeat center left;
+}
+
+.selectbox-dropdown {
+    position: relative;
+}
+
+.selectbox-dropdown:hover .selectbox-dropdown-content {
+    display: flex;
+
+}
+
+.selectbox-dropdown-content {
+    z-index: 20;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    width: calc(100% - 29px);
+    top: calc(100% + 6px);
+    border-top: 0px;
+    left: 19px;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #E5E5E5;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.selectbox-dropdown-content a {
+    font-size: 14px;
+    padding: 6px;
+    color: gray;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.selectbox-dropdown-content a:hover {
+    background-color: #F7941E;
+    transform: scale(1.1);
+    color: white;
+}
+
+.lamdepi-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.lamdepi-container-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    width: calc(100%/4);
+    margin-top: 10px;
+}
+
+.lamdepi-container-item:hover {
+    box-shadow: 0 0 5px #ccc;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.lamdepi-container-item:hover .flashsale-container-item-image {
+    box-shadow: 0 -5px 5px -5px #ccc, -5px 0 5px -5px #ccc, 5px 0 5px -5px #ccc;
+}
+
+
+.lamdepi-container-item-image {
+    height: 40%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lamdepi-container-item-image img {
+    width: 70%;
+    height: auto;
+}
+
+.lamdepi-price-special {
+    font-size: 1.15em;
+    color: #C92127;
+    font-weight: 600;
+}
+
+.lamdepi-price-old {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+@media screen and (max-width: 992px) {
+    .top-bar-desktop {
+        display: none !important;
+    }
+
+    .top-slider-right {
+        display: none !important;
+    }
+
+    .top-bar-mobile {
+        display: flex !important;
+    }
+}
+.top-bar-category-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
-    pointer-events: all;
-    background-color: var(--gray-menu-button-hover);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-
-.item-title {
-    gap: 0.5rem;
-}
-
-.item-title h3 {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--text);
-}
-
-.list-items-with-description li:hover .item-title p {
-    color: var(--gray-text-hover);
-}
-
-.item-title p {
-    font-size: 12px;
-    white-space: nowrap;
-    color: var(--gray-menu-button);
-}
-
-/* login sign-up buttons */
-
-.action-buttons {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.action-buttons a {
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 0.25rem 0.5rem;
-    transition: all 0.2s ease-in-out;
-    line-height: 1.25rem;
-}
-
-.secondary {
-    background: none;
-    color: var(--text);
-    outline: none;
-    border: 1px solid var(--gray-border);
-    border-radius: 0.5rem;
-}
-
-.secondary:hover {
-    border: 1px solid var(--gray-border-hover);
-}
-
-.primary {
-    color: var(--text);
-    border-radius: 0.5rem;
-    background-color: var(--primary-dark);
-    border: 1px solid var(--primary);
-    padding: 0.5rem 1rem;
-}
-
-.primary:hover {
-    background-color: var(--primary-darker);
-}
-
-
-.burger-menu {
+.top-bar-mobile {
     display: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-
-@media (max-width: 44rem) {
-    .hide {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem;
-        padding: 0.5rem;
-        height: 2.5rem;
-        width: 2.5rem;
-        min-width: 2.5rem;
-        min-height: 2.5rem;
-        pointer-events: all;
-    }
-
-    .burger-menu:hover {
-        background-color: var(--gray-menu-button-hover);
-    }
-
-    .burger-menu:focus {
-        outline: 1px solid var(--primary);
-    }
-
-
-    .burger-menu svg {
-        height: 1.5rem;
-        stroke: var(--gray-menu-button);
-        width: 1.5rem;
-    }
+.top-bar-child-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #C92127;
 }
+
+.top-bar-search-mobile {
+    position: relative;
+    width: calc(100% - 104px);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 8px 10px 12px 0px;
+}
+
+.top-bar-search-mobile input {
+    width: 100%;
+    display: inline-block;
+    height: 40px;
+    padding: 0 80px 0 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #545759;
+    background-color: white;
+}
+
+.top-banner-mobile {
+    text-align: center;
+    background-color: #C92127;
+    width: 100%;
+}
+
+.top-banner-mobile>a>img {
+    max-width: 130px;
+    max-height: 30px;
+    margin-top: 5px;
+}
+
+.ico_menu_white {
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_menu_white.svg") no-repeat center center;
+    background-size: contain;
+    height: 34px;
+    width: 34px;
+}
+
+.icon_cart_white {
+    background: url("https://cdn0.fahasa.com/skin/frontend/base/default/images/ico_shopping_cart_white.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.login-cutomer-icon {
+    background: url("https://cdn0.fahasa.com/skin/frontend/base/default/images/ico_thongtintk.svg") no-repeat center center;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.fill-white {
+    fill: white !important;
+}
+
+@media screen and (max-width: 992px) {
+    .footer-container-left {
+        width: 100% !important;
+        border-right: 0px solid #cecece;
+    }
+    .footer-container-right {
+        width: 100% !important;
+    }
+
+    .center_center_row {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .sidebar {
+        display: none !important;
+    }
+
+
+}
+
