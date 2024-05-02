@@ -5,15 +5,20 @@ import Category from "./Component/Category";
 import FlashSale from "./Component/FlashSale";
 import List from "../Product/List";
 
-const HomePage: React.FC = () => {
+interface homePageProps {
+    keySearch: string;
+}
+
+const HomePage: React.FC<homePageProps> = ({ keySearch }) => {
     return (
         <div className="center_center_row">
             <Carousel></Carousel>
-            <Coupon></Coupon>
+            <Coupon></Coupon> 
             <Category></Category>
             <FlashSale></FlashSale>
-            <List></List>
+            <List keySearch={keySearch}></List>
         </div>
     )
 }
+
 export default HomePage

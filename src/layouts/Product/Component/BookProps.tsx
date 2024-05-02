@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Book from "../../../Models/Book";
 import { getAllImage } from "../../../api/ImageAPI";
 import { Image } from "../../../Models/Image";
+import { Link } from "react-router-dom";
 
 interface BookProps {
     book: Book;
@@ -28,12 +29,13 @@ const BookProps: React.FC<BookProps> = (props) => {
             )
     }, [] // chi goi 1 lan
     )
-    console.log(listImage[0]);
     
     if (loading) {
         return (
-            <div>
-                <h1>Loading.....</h1>
+            <div className="three-body">
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
             </div>
         )
     }
@@ -47,17 +49,21 @@ const BookProps: React.FC<BookProps> = (props) => {
     return (
         <div className="xuhuongmuasam-container-item">
             <div className="xuhuongmuasam-container-item-image">
-                {listImage[0].url && <img src={listImage[0].url} alt={props.book.bookName} />}
+                <Link to={`books/${props.book.id}`}>
+                    {listImage[0].url && <img src={listImage[0].url} alt={props.book.bookName} />}
+                </Link>
                 <div className="new-label-pro-sale">
                     <span>{Math.round((1 - (props.book.price / props.book.originalPrice)) * 100)}%
                     </span>
                 </div>
             </div>
-            <div className="product-info">
-                <span className="product-name">{props.book.bookName}</span>
-                <span className="xuhuongmuasam-price-special">{props.book.price} VNĐ</span>
-                <span className="xuhuongmuasam-price-old">{props.book.originalPrice} VNĐ</span>
-            </div>
+            <Link to={`books/${props.book.id}`}>
+                <div className="product-info">
+                    <span className="product-name">{props.book.bookName}</span>
+                    <span className="xuhuongmuasam-price-special">{props.book.price} VNĐ</span>
+                    <span className="xuhuongmuasam-price-old">{props.book.originalPrice} VNĐ</span>
+                </div>
+            </Link>
             <div className="ratingbox">
                 <div className="rating">
                     <div style={{ width: '33%' }} className="rating-item"></div>

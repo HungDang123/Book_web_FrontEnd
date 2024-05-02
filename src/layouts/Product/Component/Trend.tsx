@@ -1,50 +1,34 @@
 import React, { useEffect, useState } from "react";
-import BookProps from "./Component/BookProps";
-import Book from "../../Models/Book";
-import { getAllBook, search } from "../../api/BookAPI";
+import BookProps from "./BookProps";
+import Book from "../../../Models/Book";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { getAllBook, search } from "../../../api/BookAPI";
 
-interface ListProps{
-    keySearch: string;
-}
 
-const List: React.FC<ListProps> = ({keySearch}) => {
+
+const Trend: React.FC = () => {
     const [listBook, setListBook] = useState<Book[]>([]);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    let [size , setSize] = useState(5)
-        useEffect(() => {
-       if(keySearch === ''){
-        getAllBook(size)
-        .then(
-            books => {
-                setListBook(books)
-                setLoading(false);
-            }
-        )
-        .catch(
-            error => {
-                setError(error);
-            }
-        )
-       }else{
-        search(keySearch)
-        .then(
-            books => {
-                setListBook(books)
-                setLoading(false);
-            }
-        )
-        .catch(
-            error => {
-                setError(error);
-            }
-        )
-       }
-    },[keySearch] // chi goi 1 lan
+    let [size, setSize] = useState(5)
+    useEffect(() => {
+            getAllBook(size)
+                .then(
+                    books => {
+                        setListBook(books)
+                        setLoading(false);
+                    }
+                )
+                .catch(
+                    error => {
+                        setError(error);
+                    }
+                )
+    }, [] // chi goi 1 lan
     )
 
-    const viewMore = ()=>{
-        setSize(size+=5)
+    const viewMore = () => {
+        setSize(size += 5)
         getAllBook(size)
             .then(
                 books => {
@@ -60,10 +44,8 @@ const List: React.FC<ListProps> = ({keySearch}) => {
     }
     if (loading) {
         return (
-            <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
+            <div>
+                <h1>Loading.....</h1>
             </div>
         )
     }
@@ -105,8 +87,7 @@ const List: React.FC<ListProps> = ({keySearch}) => {
                 <a className="xuhuongmuasam-xemthem" onClick={viewMore}>Xem thêm</a>
             </div>
         </div>
-
     );
 }
 
-export default List
+export default Trend

@@ -18,6 +18,6 @@ export async function getAllImage(BookId:string): Promise<Image[]> {
             icon: responseData[key].icon,
             url: responseData[key].dataImage
         });
-    }
+    }    
     return result
 }
